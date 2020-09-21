@@ -1,0 +1,21 @@
+.title{
+    text-align: center;
+}
+
+.mew-form, .loading {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.loading {
+    text-align: center;
+}
+
+.mews > div {
+    border:0.5px solid;
+    border-top-color: white;
+    border-bottom-color:rgb(128, 167, 202);
+    border-left-color: white;
+    border-right-color: white;
+
+}

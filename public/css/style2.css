@@ -1,0 +1,49 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+    background: rgb(55,100,144);
+    background-image: url('../logo_background.png');
+    /* Full height */
+    height: 100%; 
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  #h {
+      font-size: 50px;
+  }
+
+  @media screen and (max-width: 600px){
+      #h {
+        	font-size: 25px;
+      }
+      #p  {
+        font-size: 10px;
+    }
+    .bg-text > a  {
+        font-size: 10px;
+    }
+  }
