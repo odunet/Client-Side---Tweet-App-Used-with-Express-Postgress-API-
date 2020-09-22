@@ -5,6 +5,15 @@ const name_ = document.querySelector('#name');
 const content_ = document.querySelector('#content');
 const mewsElement = document.querySelector('.mews');
 
+//Initialize logger
+//import loger
+const Logger = require('./logger');
+
+//instantialize loger
+const logger = new Logger;
+
+//event listener
+logger.on('message',(data) => console.log('Called Logger! ', data));
 
 //Keep GIF active by default when the page is loaded
 ElementLoading.style.display = '';
@@ -46,6 +55,9 @@ form.addEventListener('submit', (event) =>{
     }).then(response => response.json())
       .then(createMew => {
           console.log(createMew.rows);
+
+          //Init Emmiter
+          logger.log(`${createMew.rows} \n`);
 
           //change the page back to defaulf screen, with loader off and form on 
           form.reset();

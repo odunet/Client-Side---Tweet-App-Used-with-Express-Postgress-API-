@@ -36,6 +36,9 @@ const server = http.createServer((req,res) => {
         case '.html':
             contenType = 'text/html';
             break;
+        case '.js':
+            contenType = 'application/javascript';
+            break;
     
     }
     console.log(filePath);
