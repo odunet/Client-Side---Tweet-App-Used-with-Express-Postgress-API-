@@ -39,9 +39,8 @@ const server = http.createServer((req,res) => {
         case '.js':
             contenType = 'application/javascript';
             break;
-    
     }
-    console.log(filePath);
+    // console.log(filePath);
     //Read file
     fs.readFile(filePath, (err,content)=> {
         if (err){
