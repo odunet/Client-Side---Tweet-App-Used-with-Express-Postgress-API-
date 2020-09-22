@@ -1,3 +1,13 @@
+//Initialize logger
+//import loger
+const Logger = require('./public/js/logger');
+
+//instantialize loger
+const logger = new Logger;
+
+//event listener
+logger.on('message',(data) => console.log('Called Logger! ', data));
+
 //Import the url module
 const EventEmitter = require('events');
 
@@ -48,6 +58,8 @@ const server = http.createServer((req,res) => {
             if(err.code == 'ENOENT'){
                 //PAGE NOT FOUND
                 fs.readFile(path.join(__dirname, 'public', 'nofound.html'),(err,content)=>{
+                //Init Emmiter
+                logger.log(`${err.code} \n`);
  
                 })
             }
@@ -55,12 +67,16 @@ const server = http.createServer((req,res) => {
                 //some error
                 res.writeHead(500);
                 res.end(`server error: ${err.code}`);
+                //Init Emmiter
+                logger.log(`${err.code} \n`);
             }
 
         }else{
             //Success
             res.writeHead(200, {'Content-Type': contenType, 'route': req.url});
             res.end(content, 'utf8');
+             //Init Emmiter
+             logger.log('Success \n');
         }
     })
 
